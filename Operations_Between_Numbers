@@ -1,0 +1,40 @@
+a = int(input())
+b = int(input())
+operator = str(input())
+total = ""
+number = ""
+if operator == "+":
+    total = a + b
+    if total % 2 == 0:
+        number = "- even"
+    else:
+        number = "- odd"
+    print(f"{a} {operator} {b} = {total} {number}")
+
+
+elif operator == "-":
+    total = a - b
+    if total % 2 == 0:
+        number = "- even"
+    else:
+        number = "- odd"
+    print(f"{a} {operator} {b} = {total} {number}")
+
+elif operator == "*":
+    total = a * b
+    if total % 2 == 0:
+        number = "- even"
+    else:
+        number = "- odd"
+    print(f"{a} {operator} {b} = {total} {number}")
+
+if operator == "/" and b != 0:
+    total = f"{(a / b):.2f}"
+    print(f"{a} {operator} {b} = {total} {number}")
+elif b == 0:
+    print(f"Cannot divide {a} by zero")
+elif operator == "%" and b != 0:
+    total = a % b
+    print(f"{a} {operator} {b} = {total} {number}")
+elif operator == "%" and b == 0:
+    print(f"Cannot divide {a} by zero")
