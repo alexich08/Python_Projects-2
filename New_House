@@ -1,0 +1,42 @@
+flower_type = str(input())
+amount_of_flowers = int(input())
+budget = int(input())
+price = 0.00
+
+if flower_type == "Roses" and amount_of_flowers <= 80:
+    price = 5.00 * amount_of_flowers
+elif flower_type == "Roses" and amount_of_flowers > 80:
+    original_price = 5.00 * amount_of_flowers
+    discount = 0.10 * original_price
+    price = original_price - discount
+elif flower_type == "Dahlias" and amount_of_flowers <= 90:
+    price = 3.80 * amount_of_flowers
+elif flower_type == "Dahlias" and amount_of_flowers > 90:
+    original_price = 3.80 * amount_of_flowers
+    discount = 0.15 * original_price
+    price = original_price - discount
+elif flower_type == "Tulips" and amount_of_flowers <= 80:
+    price = 2.80 * amount_of_flowers
+elif flower_type == "Tulips" and amount_of_flowers > 80:
+    original_price = 2.80 * amount_of_flowers
+    discount = 0.15 * original_price
+    price = original_price - discount
+elif flower_type == "Narcissus" and amount_of_flowers < 120:
+    original_price = 3.00 * amount_of_flowers
+    price_increase = 0.15 * original_price
+    price = original_price + price_increase
+elif flower_type == "Narcissus" and amount_of_flowers >= 120:
+    price = 3.00 * amount_of_flowers
+elif flower_type == "Gladiolus" and amount_of_flowers < 80:
+    original_price = 2.50 * amount_of_flowers
+    price_increase = 0.20 * original_price
+    price = original_price + price_increase
+elif flower_type == "Gladiolus" and amount_of_flowers >= 80:
+    price = 2.50 * amount_of_flowers
+
+total = abs(budget - price)
+
+if budget >= price:
+    print(f"Hey, you have a great garden with {amount_of_flowers} {flower_type} and {total:.2f} leva left.")
+else:
+    print(f"Not enough money, you need {total:.2f} leva more.")
