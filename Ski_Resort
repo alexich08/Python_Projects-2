@@ -1,0 +1,32 @@
+days_of_stay = int(input()) - 1
+type_of_room = str(input())
+feedback = str(input())
+night = 0.00
+
+if type_of_room == "room for one person":
+    night = 18.00
+elif type_of_room == "apartment":
+    night = 25.00
+    if days_of_stay < 10:
+        night = night - (night * 0.30)
+    elif days_of_stay < 15:
+        night = night - (night * 0.35)
+    else:
+        night = night - (night * 0.50)
+elif type_of_room == "president apartment":
+    night = 35.00
+    if days_of_stay < 10:
+        night = night - (night * 0.10)
+    elif days_of_stay < 15:
+        night = night - (night * 0.15)
+    else:
+        night = night - (night * 0.20)
+
+total = night * days_of_stay
+
+if feedback == "positive":
+    total1 = total + (total * 0.25)
+    print(f"{total1:.2f}")
+elif feedback == "negative":
+    total1 = total - (total * 0.10)
+    print(f"{total1:.2f}")
