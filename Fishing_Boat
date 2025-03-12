@@ -1,0 +1,32 @@
+group_budget = int(input())
+season = str(input())
+fish_man = int(input())
+rent = 0
+
+if season == "Spring":
+    rent = 3000
+elif season == "Summer" or season == "Autumn":
+    rent = 4200
+elif season == "Winter":
+    rent = 2600
+
+if fish_man <= 6:
+    discount = 0.10 * rent
+    rent = rent - discount
+elif fish_man <= 11:
+    discount = 0.15 * rent
+    rent = rent - discount
+else:
+    discount = 0.25 * rent
+    rent = rent - discount
+
+if fish_man % 2 == 0 and season != "Autumn":
+    extra_discount = 0.05 * rent
+    rent = rent - extra_discount
+
+total = group_budget - rent
+
+if total >= 0:
+    print(f"Yes! You have {total:.2f} leva left.")
+else:
+    print(f"Not enough money! You need {abs(total):.2f} leva.")
